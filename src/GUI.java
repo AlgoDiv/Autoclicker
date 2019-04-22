@@ -1,6 +1,9 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 public class GUI {
     private JRadioButton repeatRadioButton;
@@ -55,6 +58,11 @@ public class GUI {
         JFrame frame = new JFrame("Autoclicker");
         frame.setContentPane(new GUI().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        try{
+            frame.setIconImage(ImageIO.read(new File("src/icon.png")));
+        }catch(IOException e){
+            e.printStackTrace();
+        }
         frame.pack();
         frame.setVisible(true);
     }
