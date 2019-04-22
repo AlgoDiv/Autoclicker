@@ -2,6 +2,16 @@ import java.awt.Robot;
 import java.awt.event.InputEvent;
 
 public class Clicker {
+    /**
+     * Clicks specified amount of times where the user moved their mouse to.
+     * Will return without click and system.log if an error is thrown
+     *
+     * @author Tyler Johnson
+     * @param mouseButton Type of mouse click to be performed
+     * @param clickCount Amount of times to click
+     * @param clickDelay Time in between clicks
+     * @param startDelay Time before beginning clicks
+     */
     protected static void clickCount(int mouseButton, int clickCount, double clickDelay, double startDelay) {
         Robot r;
         try {
@@ -43,6 +53,16 @@ public class Clicker {
         }
     }
 
+    /**
+     * Clicks for specified amount of time where the user moved their mouse to.
+     * Will return without click and system.log if an error is thrown.
+     *
+     * @author Tyler Johnson
+     * @param mouseButton Type of mouse click to be performed
+     * @param clickTime Amount of time to click for
+     * @param clickDelay Time in between clicks
+     * @param startDelay Time before beginning clicks
+     */
     protected static void clickTime(int mouseButton, int clickTime, double clickDelay, double startDelay) {
         Robot r;
         try {
