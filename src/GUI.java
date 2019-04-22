@@ -7,8 +7,8 @@ public class GUI {
     private JRadioButton repeatForRadioButton;
     private boolean repeatBool;
     private boolean repeatForBool;
-    private JTextField textField1;
-    private JTextField textField2;
+    private JTextField repeatTextField;
+    private JTextField repeatForTextField;
     private JButton startButton;
     private JComboBox comboBox1;
     private JTextField secondsTextField;
