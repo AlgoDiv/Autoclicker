@@ -63,7 +63,7 @@ public class Clicker {
      * @param clickDelay Time in between clicks
      * @param startDelay Time before beginning clicks
      */
-    protected static void clickTime(int mouseButton, int clickTime, double clickDelay, double startDelay) {
+    protected static void clickTime(int mouseButton, double clickTime, double clickDelay, double startDelay) {
         Robot r;
         try {
             r = new Robot();

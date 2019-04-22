@@ -26,15 +26,62 @@ public class GUI {
         repeatBool = false;
         repeatForBool = false;
 
+        comboBox1.addItem("Left Click");
+        comboBox1.addItem("Right Click");
+        comboBox1.addItem("Middle Click");
+
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                double interval, delay, time;
+                int count, clickType;
+
+                interval = delay = time = count = clickType = 0;
+
                 try {
-                    double interval = Double.parseDouble(secondsTextField.getText());
-                    double delay = Double.parseDouble(secondsTextField1.getText());
+                    interval = Double.parseDouble(secondsTextField.getText());
+                    delay = Double.parseDouble(secondsTextField1.getText());
+
                 }
                 catch(Exception exc) {
                     JOptionPane.showMessageDialog(null,"Invalid values entered!", "Error", JOptionPane.WARNING_MESSAGE);
+                }
+
+                switch((String)comboBox1.getSelectedItem())
+                {
+                    case "Left Click":
+                        clickType = 1;
+                        break;
+                    case "Right Click":
+                        clickType = 2;
+                        break;
+                    case "Middle Click":
+                        clickType = 3;
+                        break;
+                    default:
+                        clickType = 0;
+                        break;
+                }
+
+                if(repeatBool)
+                {
+                    try{
+                        count = Integer.parseInt(repeatTextField.getText());
+                        Clicker.clickCount(clickType, count, interval, delay);
+                    }
+                    catch(Exception exc) {
+                        JOptionPane.showMessageDialog(null,"Invalid values entered!", "Error", JOptionPane.WARNING_MESSAGE);
+                    }
+                }
+                if(repeatForBool)
+                {
+                    try{
+                        time = Double.parseDouble(repeatForTextField.getText());
+                        Clicker.clickTime(clickType, time, interval, delay);
+                    }
+                    catch(Exception exc) {
+                        JOptionPane.showMessageDialog(null,"Invalid values entered!", "Error", JOptionPane.WARNING_MESSAGE);
+                    }
                 }
             }
         });
