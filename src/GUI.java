@@ -9,4 +9,17 @@ public class GUI {
     private JComboBox comboBox1;
     private JTextField secondsTextField;
     private JTextField secondsTextField1;
+    private JPanel panelMain;
+
+    public GUI() {
+
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Autoclicker");
+        frame.setContentPane(new GUI().panelMain);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
 }
